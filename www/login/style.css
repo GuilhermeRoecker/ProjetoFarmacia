@@ -7,13 +7,13 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e3f2fd;
+    background-color: #f4f4f9;
     color: #333;
 }
 
 /* Estilo do header */
 header {
-    background-color: #0288d1;
+    background-color: #4CAF50;
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -22,32 +22,19 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo do footer */
-footer {
-    background-color: #01579b;
-    color: white;
-    text-align: center;
-    padding: 12px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
+/* Corpo de login */
 .corpo-login {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
 .login-container {
-    background-color: #ffffff;
-    padding: 25px;
+    background-color: white;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 350px;
     text-align: center;
@@ -56,28 +43,30 @@ footer {
 .login-container h1 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #0288d1;
+    color: #4CAF50;
 }
 
+/* Campos de entrada */
 .styled-input {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 2px solid #0288d1;
+    border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
     transition: all 0.3s ease;
 }
 
 .styled-input:focus {
-    border-color: #01579b;
+    border-color: #4CAF50;
     outline: none;
-    box-shadow: 0 0 8px rgba(1, 87, 155, 0.4);
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
 }
 
+/* Botão */
 button {
     margin-top: 10px;
-    background-color: #0288d1;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 8px;
@@ -89,5 +78,5 @@ button {
 }
 
 button:hover {
-    background-color: #0277bd;
+    background-color: #45a049;
 }
