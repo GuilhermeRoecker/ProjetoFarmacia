@@ -8,6 +8,7 @@ class ProjetoFarmaciaApplicationTests {
 
 	@Test
 	void contextLoads() {
+		//AAAAAA
 	}
 
 }
