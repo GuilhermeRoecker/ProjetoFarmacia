@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Embalagens</title>
+    <link rel="stylesheet" href="cadastro-embalagens.css">
+    <!-- Adicionando o FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>Cadastro de Embalagens</header>
+
+<div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="card">
+            <h3>Voltar</h3>
+            <a href="../inicio/index.html">Voltar</a>
+        </div>
+    </div>
+
+    <!-- Área principal -->
+    <div class="content-area">
+        <!-- Barra de pesquisa e botão Novo -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar embalagem...">
+            <button class="search-btn">Buscar</button>
+            <button class="novo-btn" onclick="abrirFormulario()">Nova Embalagem</button>
+        </div>
+
+        <!-- Tabela de Embalagens -->
+        <div class="table-container">
+            <h2>Lista de Embalagens</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Fornecedor</th>
+                        <th>Valor Unitário</th>
+                        <th>Estoque Atual</th>
+                        <th>Estoque Mínimo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Embalagens cadastradas serão listadas aqui dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Menu lateral de cadastro de embalagem -->
+<div class="menu-lateral" id="menuLateral">
+    <div class="menu-content">
+        <h2>Nova Embalagem</h2>
+        <form id="formCadastro">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo" required>
+
+            <label for="fornecedor">Fornecedor:</label>
+            <input type="text" id="fornecedor" name="fornecedor" required>
+
+            <label for="valorUnitario">Valor Unitário (R$):</label>
+            <input type="number" id="valorUnitario" name="valorUnitario" step="0.01" required>
+
+            <label for="estoqueAtual">Estoque Atual:</label>
+            <input type="number" id="estoqueAtual" name="estoqueAtual" required>
+
+            <label for="estoqueMinimo">Estoque Mínimo:</label>
+            <input type="number" id="estoqueMinimo" name="estoqueMinimo" required>
+
+            <button type="submit" class="submit-btn">Cadastrar Embalagem</button>
+        </form>
+        <button class="close-btn" onclick="fecharFormulario()">Fechar</button>
+    </div>
+</div>
+
+<script>
+    function abrirFormulario() {
+        document.getElementById("menuLateral").classList.add("aberto");
+    }
+
+    function fecharFormulario() {
+        document.getElementById("menuLateral").classList.remove("aberto");
+    }
+
+    document.getElementById('formCadastro').addEventListener('submit', function(event) {
+        event.preventDefault();  // Impede o envio do formulário para demonstração
+        alert('Embalagem cadastrada com sucesso!');
+        document.getElementById('formCadastro').reset();  // Limpa o formulário
+        fecharFormulario();
+    });
+</script>
+
+</body>
+</html>

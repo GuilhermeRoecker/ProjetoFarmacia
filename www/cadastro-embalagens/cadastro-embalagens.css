@@ -1,0 +1,208 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Layout principal */
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #ffffff;
+    width: 250px;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card a {
+    display: block;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card a:hover {
+    background-color: #45a049;
+}
+
+/* Área de conteúdo */
+.content-area {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Caixa de pesquisa e botões */
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-container button, .novo-btn {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.search-container button:hover, .novo-btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilo da tabela */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-container h2 {
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Botões de ações dentro da tabela */
+td .action-btn {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-btn.edit {
+    background-color: #2196F3;
+    color: white;
+}
+
+.action-btn.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
+
+/* Menu lateral */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+}
+
+.menu-lateral.aberto {
+    right: 0;
+}
+
+.menu-content h2 {
+    margin-bottom: 20px;
+}
+
+.menu-content input, .menu-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.close-btn {
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+    width: 100%;
+}
+
+.close-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Botão Cadastrar Embalagem */
+.menu-content button[type="submit"] {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-content button[type="submit"]:hover {
+    background-color: #45a049;
+}
