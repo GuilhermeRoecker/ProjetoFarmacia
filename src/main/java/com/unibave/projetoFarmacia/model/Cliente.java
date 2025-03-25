@@ -2,7 +2,7 @@ package com.unibave.projetoFarmacia.model;
 
 
 import java.time.LocalDate;
-import java.util.List;
+
 
 import jakarta.persistence.Entity;
 
@@ -12,9 +12,9 @@ public class Cliente extends Pessoa {
 
     private String observacoes;
 
-    public Cliente(Integer id, String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
-            String telefone, String email, Endereco endereco, List<Pedido> pedidos, List<Prescricao> prescricoes) {
-        super(id, nome, dtNascimento, documento, pessoaTipo, telefone, email, endereco, pedidos, prescricoes);
+    public Cliente(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
+            String telefone, String email, Endereco endereco) {
+        super(nome, dtNascimento, documento, pessoaTipo, telefone, email, endereco);
     }
 
     public String getObservacoes() {

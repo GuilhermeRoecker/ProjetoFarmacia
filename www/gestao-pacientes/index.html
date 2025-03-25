@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Pacientes</title>
+    <link rel="stylesheet" href="gestao-pacientes.css">
+</head>
+<body>
+
+<header>Gestão de Pacientes</header>
+
+<div class="main-container">
+    <div class="sidebar">
+        <div class="card">
+            <h3>Página Inicial</h3>
+            <a href="../inicio/index.html">Voltar</a>
+        </div>
+    </div>
+
+    <div class="content-area">
+        <div class="search-container">
+            <input type="text" placeholder="Buscar por nome, telefone ou CPF">
+            <button>Buscar</button>
+            <a href="./cadastro/index.html" class="novo-btn">Novo</a>
+        </div>
+
+        <div class="table-container">
+            <h2>Lista de Pacientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Lista de pacientes será carregada aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -20,9 +20,8 @@ import jakarta.persistence.GenerationType;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Pessoa {
 
-    public Pessoa(Integer id, String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
-        String telefone, String email, Endereco endereco, List<Pedido> pedidos, List<Prescricao> prescricoes) {
-        this.id = id;
+    public Pessoa(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
+        String telefone, String email, Endereco endereco) {
         this.nome = nome;
         this.dtNascimento = dtNascimento;
         this.documento = documento;
@@ -30,8 +29,6 @@ public class Pessoa {
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
-        this.pedidos = pedidos;
-        this.prescricoes = prescricoes;
     }
 
     @Id

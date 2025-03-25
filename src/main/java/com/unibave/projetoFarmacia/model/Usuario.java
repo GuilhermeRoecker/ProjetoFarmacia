@@ -1,28 +1,27 @@
 package com.unibave.projetoFarmacia.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 
 @Entity
 public class Usuario extends Pessoa {
 
-    public Usuario(Integer id, String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
-            String telefone, String email, Endereco endereco, List<Pedido> pedidos, List<Prescricao> prescricoes,
-            String username, String senha, String role, String cRM, String especialidade) {
-        super(id, nome, dtNascimento, documento, pessoaTipo, telefone, email, endereco, pedidos, prescricoes);
+    public Usuario(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
+            String telefone, String email, Endereco endereco,
+            String username, String senha, String role, String crm, String especialidade) {
+        super(nome, dtNascimento, documento, pessoaTipo, telefone, email, endereco);
         this.username = username;
         this.senha = senha;
         this.role = role;
-        CRM = cRM;
+        this.crm = crm;
         this.especialidade = especialidade;
     }
 
     private String username;
     private String senha;
     private String role;
-    private String CRM;
+    private String crm;
     private String especialidade;
     
     public String getUsername() {
@@ -46,11 +45,11 @@ public class Usuario extends Pessoa {
 
 
     public String getCRM() {
-        return this.CRM;
+        return this.crm;
     }
 
-    public void setCRM(String CRM) {
-        this.CRM = CRM;
+    public void setCRM(String crm) {
+        this.crm = crm;
     }
 
     public String getEspecialidade() {
@@ -68,7 +67,7 @@ public class Usuario extends Pessoa {
         result = prime * result + ((username == null) ? 0 : username.hashCode());
         result = prime * result + ((senha == null) ? 0 : senha.hashCode());
         result = prime * result + ((role == null) ? 0 : role.hashCode());
-        result = prime * result + ((CRM == null) ? 0 : CRM.hashCode());
+        result = prime * result + ((crm == null) ? 0 : crm.hashCode());
         result = prime * result + ((especialidade == null) ? 0 : especialidade.hashCode());
         return result;
     }
@@ -96,10 +95,10 @@ public class Usuario extends Pessoa {
                 return false;
         } else if (!role.equals(other.role))
             return false;
-        if (CRM == null) {
-            if (other.CRM != null)
+        if (crm == null) {
+            if (other.crm != null)
                 return false;
-        } else if (!CRM.equals(other.CRM))
+        } else if (!crm.equals(other.crm))
             return false;
         if (especialidade == null) {
             if (other.especialidade != null)

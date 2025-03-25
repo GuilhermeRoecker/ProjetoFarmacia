@@ -1,7 +1,6 @@
 package com.unibave.projetoFarmacia.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 
@@ -11,10 +10,10 @@ public class Fornecedor extends Pessoa {
     private String razaoSocial;
     private String inscricaoEstadual;
     
-    public Fornecedor(Integer id, String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
-            String telefone, String email, Endereco endereco, List<Pedido> pedidos, List<Prescricao> prescricoes,
+    public Fornecedor(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
+            String telefone, String email, Endereco endereco,
             String razaoSocial, String inscricaoEstadual) {
-        super(id, nome, dtNascimento, documento, pessoaTipo, telefone, email, endereco, pedidos, prescricoes);
+        super(nome, dtNascimento, documento, pessoaTipo, telefone, email, endereco);
         this.razaoSocial = razaoSocial;
         this.inscricaoEstadual = inscricaoEstadual;
     }
