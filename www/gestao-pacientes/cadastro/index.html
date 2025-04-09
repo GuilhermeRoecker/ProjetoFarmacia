@@ -21,7 +21,7 @@
     <div class="content-area">
         <div class="form-container">
             <h2>Cadastro de Pacientes</h2>
-            <form>
+            <form id="formCadastro">
                 <label for="nome">Nome Completo:</label>
                 <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
 
@@ -48,19 +48,19 @@
                 <label for="PessoaTipo">Tipo de Pessoa:</label>
                 <div class="tipo-pessoa">
                     <div class="tipo-option">
-                        <input type="checkbox" id="fisica" name="tipoPessoa" value="FISICA" 
-                               onclick="selecionarTipo(this)" 
-                               onkeypress="selecionarTipo(this)" 
-                               onkeydown="selecionarTipo(this)" 
-                               onkeyup="selecionarTipo(this)">
+                        <input type="checkbox" id="fisica" name="tipoPessoa" value="FISICA"
+                        onclick="selecionarTipo(this)"
+                        onkeydown="selecionarTipo(this)"
+                        onkeyup="selecionarTipo(this)"
+                        onkeypress="selecionarTipo(this)">
                         <label for="fisica">Física</label>
                     </div>
                     <div class="tipo-option">
-                        <input type="checkbox" id="juridica" name="tipoPessoa" value="JURIDICA" 
-                               onclick="selecionarTipo(this)" 
-                               onkeypress="selecionarTipo(this)" 
-                               onkeydown="selecionarTipo(this)" 
-                               onkeyup="selecionarTipo(this)">
+                        <input type="checkbox" id="juridica" name="tipoPessoa" value="JURIDICA"
+                        onclick="selecionarTipo(this)"
+                        onkeydown="selecionarTipo(this)"
+                        onkeyup="selecionarTipo(this)"
+                        onkeypress="selecionarTipo(this)">
                         <label for="juridica">Jurídica</label>
                     </div>
                 </div>
@@ -73,6 +73,8 @@
         </div>
     </div>
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

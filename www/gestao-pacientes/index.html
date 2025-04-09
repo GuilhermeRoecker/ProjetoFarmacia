@@ -20,8 +20,16 @@
 
     <div class="content-area">
         <div class="search-container">
-            <input type="text" placeholder="Buscar por nome, telefone ou CPF">
-            <button>Buscar</button>
+            <select id="tipoBusca">
+                <option value="">Todos</option>
+                <option value="id">ID</option>
+                <option value="nome">Nome</option>
+                <option value="documento">CPF/CNPJ</option>
+                <option value="telefone">Telefone</option>
+                <option value="email">E-mail</option>
+            </select>
+            <input type="text" id="valorBusca" placeholder="Digite o valor">
+            <button onclick="buscarPacientes()">Buscar</button>
             <a href="./cadastro/index.html" class="novo-btn">Novo</a>
         </div>
 
@@ -37,13 +45,15 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabelaPacientes">
                     <!-- Lista de pacientes será carregada aqui -->
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
