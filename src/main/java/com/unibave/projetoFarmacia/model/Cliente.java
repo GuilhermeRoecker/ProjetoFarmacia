@@ -12,6 +12,9 @@ public class Cliente extends Pessoa {
 
     private String observacoes;
 
+    public Cliente() {
+    }
+
     public Cliente(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
             String telefone, String email, Endereco endereco) {
         super(nome, dtNascimento, documento, pessoaTipo, telefone, email, endereco);

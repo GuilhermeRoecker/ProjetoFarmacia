@@ -20,6 +20,9 @@ import jakarta.persistence.GenerationType;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Pessoa {
 
+    public Pessoa() {
+    }
+
     public Pessoa(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
         String telefone, String email, Endereco endereco) {
         this.nome = nome;
