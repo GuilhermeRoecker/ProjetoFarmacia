@@ -2,10 +2,12 @@ package com.unibave.projetoFarmacia.model;
 
 import java.time.LocalDate;
 
+import com.unibave.projetoFarmacia.enums.TipoPessoa;
+
 import jakarta.persistence.Entity;
 
 @Entity
-public class Fornecedor extends Pessoa {
+public class Fornecedor extends Entidade {
 
     private String razaoSocial;
     private String inscricaoEstadual;

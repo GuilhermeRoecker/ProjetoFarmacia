@@ -1,4 +1,4 @@
-package com.unibave.projetoFarmacia.model;
+package com.unibave.projetoFarmacia.enums;
 
 public enum TipoPessoa {
     FISICA(1),

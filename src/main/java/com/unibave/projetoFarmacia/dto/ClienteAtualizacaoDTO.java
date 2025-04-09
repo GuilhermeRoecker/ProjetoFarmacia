@@ -2,8 +2,8 @@ package com.unibave.projetoFarmacia.dto;
 
 import java.time.LocalDate;
 
+import com.unibave.projetoFarmacia.enums.TipoPessoa;
 import com.unibave.projetoFarmacia.model.Endereco;
-import com.unibave.projetoFarmacia.model.TipoPessoa;
 
 public class ClienteAtualizacaoDTO {
 

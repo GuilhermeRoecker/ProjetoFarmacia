@@ -155,3 +155,115 @@ td .action-btn {
 .action-btn:hover {
     opacity: 0.8;
 }
+
+.offcanvas {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 15px rgba(0,0,0,0.3);
+    padding: 25px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.offcanvas.open {
+    right: 0;
+}
+
+.offcanvas h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+.offcanvas-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.offcanvas-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.offcanvas-content label,
+.offcanvas-section label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.offcanvas-content input,
+.offcanvas-content select,
+.offcanvas-content textarea,
+.offcanvas-section input,
+.offcanvas-section select,
+.offcanvas-section textarea {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.offcanvas-content input:focus,
+.offcanvas-content select:focus,
+.offcanvas-content textarea:focus,
+.offcanvas-section input:focus,
+.offcanvas-section select:focus,
+.offcanvas-section textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.offcanvas-content textarea,
+.offcanvas-section textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.offcanvas-content button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.offcanvas-content button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.offcanvas-content button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.offcanvas-content button[type="button"]:hover {
+    background-color: #bbb;
+}
+
+/* Responsivo (não precisa de grid pois é empilhado) */
+@media (max-width: 600px) {
+    .offcanvas {
+        width: 100%;
+    }
+}

@@ -2,6 +2,8 @@ package com.unibave.projetoFarmacia.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.unibave.projetoFarmacia.enums.TipoPessoa;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -13,17 +15,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.persistence.GenerationType;
 
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Pessoa {
+@Table(name = "entidade")
+public class Entidade {
 
-    public Pessoa() {
+    public Entidade() {
     }
 
-    public Pessoa(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
+    public Entidade(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
         String telefone, String email, Endereco endereco) {
         this.nome = nome;
         this.dtNascimento = dtNascimento;

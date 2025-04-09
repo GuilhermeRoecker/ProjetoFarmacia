@@ -17,7 +17,7 @@ public class Prescricao {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    private Pessoa cliente;
+    private Entidade cliente;
 
     private String nomeArquivo;
 
@@ -33,11 +33,11 @@ public class Prescricao {
         this.id = id;
     }
 
-    public Pessoa getCliente() {
+    public Entidade getCliente() {
         return cliente;
     }
 
-    public void setCliente(Pessoa cliente) {
+    public void setCliente(Entidade cliente) {
         this.cliente = cliente;
     }
 

@@ -91,3 +91,59 @@ function excluirPaciente(id) {
 
 // Carrega todos os pacientes ao abrir a página
 window.onload = buscarPacientes;
+
+function abrirCadastro() {
+    document.getElementById("cadastroOffcanvas").classList.add("open");
+}
+
+function fecharCadastro() {
+    document.getElementById("cadastroOffcanvas").classList.remove("open");
+}
+
+document.getElementById("formCadastro").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    const paciente = {
+        nome: form.nome.value,
+        dtNascimento: form.nascimento.value,
+        documento: form.documento.value, // Corrigido aqui
+        telefone: form.telefone.value,
+        email: form.email.value,
+        pessoaTipo: form.tipoPessoa.value, // Corrigido para o select
+        sexo: form.sexo.value,
+        observacoes: form.observacoes ? form.observacoes.value : null, // opcional
+        endereco: {
+            rua: form.rua.value,
+            numero: form.numero.value,
+            bairro: form.bairro.value,
+            cidade: form.cidade.value,
+            estado: form.estado.value,
+            cep: form.cep.value
+        }
+    };
+
+    try {
+        const response = await fetch("http://localhost:8080/clientes", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(paciente)
+        });
+
+        if (response.ok) {
+            alert("Paciente cadastrado com sucesso!");
+            fecharCadastro();
+            buscarPacientes();
+            form.reset();
+        } else {
+            const erro = await response.text();
+            alert("Erro ao cadastrar paciente: " + erro);
+        }
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao enviar os dados.");
+    }
+});
+
+
+

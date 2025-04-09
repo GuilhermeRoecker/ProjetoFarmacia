@@ -2,10 +2,12 @@ package com.unibave.projetoFarmacia.model;
 
 import java.time.LocalDate;
 
+import com.unibave.projetoFarmacia.enums.TipoPessoa;
+
 import jakarta.persistence.Entity;
 
 @Entity
-public class Usuario extends Pessoa {
+public class Usuario extends Entidade {
 
     public Usuario(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
             String telefone, String email, Endereco endereco,

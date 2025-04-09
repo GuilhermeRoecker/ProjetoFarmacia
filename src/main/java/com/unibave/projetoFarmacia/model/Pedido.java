@@ -17,7 +17,7 @@ public class Pedido {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    private Pessoa cliente;
+    private Entidade cliente;
 
     private LocalDate dataPedido;
     private Double valorTotal;
@@ -31,11 +31,11 @@ public class Pedido {
         this.id = id;
     }
 
-    public Pessoa getCliente() {
+    public Entidade getCliente() {
         return this.cliente;
     }
 
-    public void setCliente(Pessoa cliente) {
+    public void setCliente(Entidade cliente) {
         this.cliente = cliente;
     }
 
