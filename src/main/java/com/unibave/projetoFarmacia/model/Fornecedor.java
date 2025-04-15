@@ -11,6 +11,9 @@ public class Fornecedor extends Entidade {
 
     private String razaoSocial;
     private String inscricaoEstadual;
+
+    public Fornecedor() {
+    }
     
     public Fornecedor(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
             String telefone, String email, Endereco endereco,

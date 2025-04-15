@@ -9,6 +9,9 @@ import jakarta.persistence.Entity;
 @Entity
 public class Usuario extends Entidade {
 
+    public Usuario() {
+    }
+
     public Usuario(String nome, LocalDate dtNascimento, String documento, TipoPessoa pessoaTipo,
             String telefone, String email, Endereco endereco,
             String username, String senha, String role, String crm, String especialidade) {

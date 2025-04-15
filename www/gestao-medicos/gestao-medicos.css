@@ -171,6 +171,18 @@ tr:nth-child(even) {
     border-radius: 5px;
 }
 
+.menu-lateral select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Estilo do botão */
 .menu-lateral button {
     width: 100%;
     padding: 10px;

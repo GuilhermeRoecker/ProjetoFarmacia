@@ -20,12 +20,10 @@ import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
-
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
-    
+
     private final ClienteService service;
 
     public ClienteController(ClienteService service) {
@@ -35,7 +33,7 @@ public class ClienteController {
     @GetMapping
     public ResponseEntity<List<Cliente>> listAll() {
         List<Cliente> clientes = service.listAll();
-        if(clientes.isEmpty()) {
+        if (clientes.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(clientes);
@@ -44,7 +42,7 @@ public class ClienteController {
     @GetMapping("clientes/{id}")
     public ResponseEntity<Cliente> findById(@PathVariable Integer id) {
         Cliente cliente = service.findById(id);
-        if(cliente == null) {
+        if (cliente == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(cliente);
@@ -53,7 +51,7 @@ public class ClienteController {
     @GetMapping("buscar/nome")
     public ResponseEntity<List<Cliente>> findByNome(@RequestParam String nome) {
         List<Cliente> clientes = service.findByNome(nome);
-        if(clientes.isEmpty()) {
+        if (clientes.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(clientes);
@@ -62,7 +60,7 @@ public class ClienteController {
     @GetMapping("buscar/documento")
     public ResponseEntity<Cliente> findByDocumento(@RequestParam String documento) {
         Cliente cliente = service.findByDocumento(documento);
-        if(cliente == null) {
+        if (cliente == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(cliente);
@@ -71,7 +69,7 @@ public class ClienteController {
     @GetMapping("buscar/telefone")
     public ResponseEntity<Cliente> findByTelefone(@RequestParam String telefone) {
         Cliente cliente = service.findByTelefone(telefone);
-        if(cliente == null) {
+        if (cliente == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(cliente);
@@ -80,7 +78,7 @@ public class ClienteController {
     @GetMapping("buscar/email")
     public ResponseEntity<Cliente> findByEmail(@RequestParam String email) {
         Cliente cliente = service.findByEmail(email);
-        if(cliente == null) {
+        if (cliente == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(cliente);
@@ -101,7 +99,7 @@ public class ClienteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluirCliente(@PathVariable Integer id) {
         Cliente cliente = service.findById(id);
-        if(cliente == null) {
+        if (cliente == null) {
             return ResponseEntity.notFound().build();
         }
         service.excluirCadastroCliente(cliente);

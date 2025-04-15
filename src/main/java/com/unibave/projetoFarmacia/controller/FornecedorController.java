@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.unibave.projetoFarmacia.model.Fornecedor;
 import com.unibave.projetoFarmacia.services.FornecedorService;
 
-
 @RestController
 @RequestMapping("/fornecedores")
 public class FornecedorController {
@@ -27,20 +26,20 @@ public class FornecedorController {
     public FornecedorController(FornecedorService service) {
         this.service = service;
     }
-    
+
     @GetMapping
     public ResponseEntity<List<Fornecedor>> listAll() {
         List<Fornecedor> fornecedores = service.listAll();
-        if(fornecedores.isEmpty()) {
+        if (fornecedores.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(fornecedores);
-    }   
+    }
 
     @GetMapping("{id}")
     public ResponseEntity<Fornecedor> findById(@PathVariable Integer id) {
         Fornecedor fornecedor = service.findById(id);
-        if(fornecedor == null) {
+        if (fornecedor == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(fornecedor);
@@ -49,7 +48,7 @@ public class FornecedorController {
     @GetMapping("buscar/nome")
     public ResponseEntity<List<Fornecedor>> findByNome(@RequestParam String nome) {
         List<Fornecedor> fornecedores = service.findByNome(nome);
-        if(fornecedores.isEmpty()) {
+        if (fornecedores.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(fornecedores);
@@ -59,7 +58,7 @@ public class FornecedorController {
     @GetMapping("buscar/documento")
     public ResponseEntity<Fornecedor> findByDocumento(@RequestParam String documento) {
         Fornecedor fornecedor = service.findByDocumento(documento);
-        if(fornecedor == null) {
+        if (fornecedor == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(fornecedor);
@@ -68,7 +67,7 @@ public class FornecedorController {
     @GetMapping("buscar/telefone")
     public ResponseEntity<Fornecedor> findByTelefone(@RequestParam String telefone) {
         Fornecedor fornecedor = service.findByTelefone(telefone);
-        if(fornecedor == null) {
+        if (fornecedor == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(fornecedor);
@@ -77,7 +76,7 @@ public class FornecedorController {
     @GetMapping("buscar/email")
     public ResponseEntity<Fornecedor> findByEmail(@RequestParam String email) {
         Fornecedor fornecedor = service.findByEmail(email);
-        if(fornecedor == null) {
+        if (fornecedor == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(fornecedor);
@@ -86,7 +85,7 @@ public class FornecedorController {
     @GetMapping("buscar/razaoSocial")
     public ResponseEntity<Fornecedor> findByRazaoSocial(@RequestParam String razaoSocial) {
         Fornecedor fornecedor = service.findByRazaoSocial(razaoSocial);
-        if(fornecedor == null) {
+        if (fornecedor == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(fornecedor);
@@ -95,7 +94,7 @@ public class FornecedorController {
     @GetMapping("buscar/inscricaoEstadual")
     public ResponseEntity<Fornecedor> findByInscricaoEstadual(@RequestParam String inscricaoEstadual) {
         Fornecedor fornecedor = service.findByInscricaoEstadual(inscricaoEstadual);
-        if(fornecedor == null) {
+        if (fornecedor == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(fornecedor);
@@ -108,7 +107,8 @@ public class FornecedorController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Fornecedor> modificarFornecedor(@PathVariable Integer id, @RequestBody Fornecedor fornecedor) {
+    public ResponseEntity<Fornecedor> modificarFornecedor(@PathVariable Integer id,
+            @RequestBody Fornecedor fornecedor) {
         Fornecedor fornecedorAtualizado = service.modificarParcial(id, fornecedor);
         if (fornecedorAtualizado == null) {
             return ResponseEntity.notFound().build();
@@ -125,6 +125,5 @@ public class FornecedorController {
         service.excluirCadastroFornecedor(fornecedor);
         return ResponseEntity.noContent().build();
     }
-    
-    
+
 }

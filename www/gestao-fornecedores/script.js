@@ -80,7 +80,7 @@ function excluirfornecedor(id) {
         .then(res => {
             if (res.ok) {
                 alert("fornecedor excluído com sucesso!");
-                buscarfornecedores();
+                buscarFornecedores();
             } else {
                 alert("Erro ao excluir fornecedor.");
             }
@@ -90,7 +90,7 @@ function excluirfornecedor(id) {
 }
 
 // Carrega todos os fornecedores ao abrir a página
-window.onload = buscarfornecedores;
+window.onload = buscarFornecedores;
 
 function abrirCadastro() {
     document.getElementById("cadastroOffcanvas").classList.add("open");
@@ -135,7 +135,7 @@ document.getElementById("formCadastro").addEventListener("submit", async functio
         if (response.ok) {
             alert("Fornecedor cadastrado com sucesso!");
             fecharCadastro();
-            buscarfornecedores();
+            buscarFornecedores();
             form.reset();
         } else {
             const erro = await response.text();
