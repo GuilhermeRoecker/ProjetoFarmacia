@@ -9,10 +9,12 @@ import org.springframework.lang.NonNull;
 public class CorsConfig implements WebMvcConfigurer {
 
     @Override
-    public void addCorsMappings(@NonNull CorsRegistry registry) {
+    public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*") // ou *  para permitir todos os domínios ou http://localhost:5500 para permitir apenas o localhost
+                .allowedOrigins("http://127.0.0.1:5500") // ou use o IP exato do frontend
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+                .allowCredentials(true) // necessário!
                 .allowedHeaders("*");
     }
 }
+

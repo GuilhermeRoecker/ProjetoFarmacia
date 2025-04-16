@@ -101,6 +101,11 @@ public class UsuarioService {
         return repository.findAll();
     }
 
+    public boolean autenticar(String username, String senha) {
+        Usuario usuario = repository.findByUsername(username);
+        return usuario != null && usuario.getSenha().equals(senha);
+    }
+    
     
 
 }
