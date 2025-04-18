@@ -9,24 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("username", username);
         formData.append("password", password);
 
-        fetch("http://localhost:8080/login", {
+        fetch("http://localhost:8080/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            credentials: "include",
             body: formData.toString()
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Usuário ou senha inválidos.");
-            }
+        })        
+        .then(response => response.json())
+        .then(data => {
+            localStorage.setItem("auth_token", data.token);
             alert("Login bem-sucedido!");
-            // Redirecionar para o início
-            window.location.href = "http://127.0.0.1:5500/www/inicio/"; // URL corrigida
-        })
+            window.location.href = "/www/inicio/";  // Corrigido
+        })        
         .catch(error => {
-            alert(error.message);
+            alert("Usuário ou senha inválidos.");
         });
     });
 });
