@@ -15,8 +15,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.unibave.projetoFarmacia.services.UsuarioDetailsService;
-import com.unibave.projetoFarmacia.repository.UsuarioRepository;
 
 @Configuration
 public class SecurityConfig implements WebMvcConfigurer {
@@ -43,7 +41,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                     config.addAllowedHeader("*");
                     return config;
                 }))
-                .authorizeRequests(auth -> auth
+                        .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login").permitAll()
                         .requestMatchers("/", "/index.html", "/clientes/**", "/fornecedores/**", "/usuarios/**")
                         .permitAll()
@@ -65,6 +63,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                 )
                 .build();
     }
+    
 
     @Bean
     public PasswordEncoder passwordEncoder() {
