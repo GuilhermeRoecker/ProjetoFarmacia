@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function carregarMedicos() {
     try {
-        const response = await fetch("/usuarios");
+        const response = await fetch('http://localhost:8080/usuarios'); // <- Aqui já estava certo
         if (!response.ok) throw new Error("Erro ao buscar médicos.");
 
         const medicos = await response.json();
@@ -50,7 +50,7 @@ async function cadastrarMedico() {
     };
 
     try {
-        const response = await fetch("/usuarios", {
+        const response = await fetch('http://localhost:8080/usuarios', { // <- Corrigido aqui
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -58,7 +58,12 @@ async function cadastrarMedico() {
             body: JSON.stringify(medico)
         });
 
-        if (!response.ok) throw new Error("Erro ao cadastrar médico.");
+        console.log("Status da resposta:", response.status);
+        if (!response.ok) {
+            const erroTexto = await response.text();
+            console.error("Detalhes do erro:", erroTexto);
+            throw new Error("Erro ao cadastrar médico.");
+        }
 
         fecharMenuLateral();
         await carregarMedicos();
@@ -71,7 +76,7 @@ async function excluirMedico(id) {
     if (!confirm("Tem certeza que deseja excluir este médico?")) return;
 
     try {
-        const response = await fetch(`/usuarios/${id}`, {
+        const response = await fetch(`http://localhost:8080/usuarios/${id}`, { // <- Corrigido aqui também
             method: "DELETE"
         });
 
