@@ -46,7 +46,7 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabelaInsumos">
                     <!-- Insumos cadastrados serão listados aqui dinamicamente -->
                 </tbody>
             </table>
@@ -57,57 +57,71 @@
 <!-- Menu lateral de cadastro de insumo -->
 <div class="menu-lateral" id="menuLateral">
     <div class="menu-content">
-        <h2>Novo Insumo</h2>
-        <form id="formCadastro">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+      <h2>Novo Insumo</h2>
+      <form id="formCadastro">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+  
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" required>
+  
+        <label for="fabricante">Fabricante:</label>
+        <input type="text" id="fabricante" name="fabricante" required>
+  
+        <label for="fornecedor">Fornecedor:</label>
+        <div class="input-with-icon">
+          <input type="search" id="fornecedor" name="fornecedor" required readonly placeholder="Selecione o fornecedor">
+          <button type="button" class="icon-button" onclick="abrirModalFornecedor()">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
 
-            <label for="tipo">Tipo:</label>
-            <input type="text" id="tipo" name="tipo" required>
-
-            <label for="fabricante">Fabricante:</label>
-            <input type="text" id="fabricante" name="fabricante" required>
-
-            <label for="fornecedor">Fornecedor:</label>
-            <input type="text" id="fornecedor" name="fornecedor" required>
-
-            <label for="siteFornecedor">Site do Fornecedor:</label>
-            <input type="url" id="siteFornecedor" name="siteFornecedor" required>
-
-            <label for="validade">Data de Validade:</label>
-            <input type="date" id="validade" name="validade" required>
-
-            <label for="prazoEntrega">Prazo de Entrega (dias):</label>
-            <input type="number" id="prazoEntrega" name="prazoEntrega" required>
-
-            <label for="valorUnitario">Valor Unitário (R$):</label>
-            <input type="number" id="valorUnitario" name="valorUnitario" step="0.01" required>
-
-            <label for="valorGram">Valor por Grama/ML (R$):</label>
-            <input type="number" id="valorGram" name="valorGram" step="0.01" required>
-
-            <button type="submit" class="submit-btn">Cadastrar Insumo</button>
-        </form>
-        <button class="close-btn" onclick="fecharFormulario()">Fechar</button>
+        <label for="siteFornecedor">Site do Fornecedor:</label>
+        <input type="url" id="siteFornecedor" name="siteFornecedor" required>
+  
+        <label for="validade">Data de Validade:</label>
+        <input type="date" id="validade" name="validade" required>
+  
+        <label for="prazoEntrega">Prazo de Entrega:</label>
+        <input type="text" id="prazoEntrega" name="prazoEntrega" required>
+  
+        <label for="quantidadeEstoque">Quantidade em Estoque:</label>
+        <input type="number" id="quantidadeEstoque" name="quantidadeEstoque" min="0" required>
+  
+        <label for="quantidadeMinimaEstoque">Estoque Mínimo:</label>
+        <input type="number" id="quantidadeMinimaEstoque" name="quantidadeMinimaEstoque" min="0" required>
+  
+        <label for="precoCusto">Preço de Custo (R$):</label>
+        <input type="number" id="precoCusto" name="precoCusto" step="0.01" required>
+  
+        <label for="precoVenda">Preço de Venda (R$):</label>
+        <input type="number" id="precoVenda" name="precoVenda" step="0.01" required>
+  
+        <label for="unidadeMedida">Unidade de Medida:</label>
+        <input type="text" id="unidadeMedida" name="unidadeMedida" required>
+  
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+  
+        <button type="submit" class="submit-btn">Cadastrar Insumo</button>
+      </form>
+      <button class="close-btn" onclick="fecharFormulario()">Fechar</button>
     </div>
-</div>
+  </div>
+  
+  <!-- Modal de Fornecedores -->
+<div id="modalFornecedor" class="modal">
+    <div class="modal-content">
+      <h2>Selecionar Fornecedor</h2>
+      <input type="text" id="pesquisarFornecedor" placeholder="Pesquisar fornecedor...">
+      <ul id="listaFornecedores">
+        <!-- Fornecedores serão carregados aqui -->
+      </ul>
+      <button onclick="fecharModalFornecedor()">Fechar</button>
+    </div>
+  </div>
+
 <script src="script.js"></script>
-<script>
-    function abrirFormulario() {
-        document.getElementById("menuLateral").classList.add("aberto");
-    }
-
-    function fecharFormulario() {
-        document.getElementById("menuLateral").classList.remove("aberto");
-    }
-
-    document.getElementById('formCadastro').addEventListener('submit', function(event) {
-        event.preventDefault();  // Impede o envio do formulário para demonstração
-        alert('Insumo cadastrado com sucesso!');
-        document.getElementById('formCadastro').reset();  // Limpa o formulário
-        fecharFormulario();
-    });
-</script>
 
 </body>
 </html>

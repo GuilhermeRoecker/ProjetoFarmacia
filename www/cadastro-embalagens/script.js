@@ -19,4 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setupAuth();
+
+
+});
+
+function abrirFormulario() {
+    document.getElementById("menuLateral").classList.add("aberto");
+}
+
+function fecharFormulario() {
+    document.getElementById("menuLateral").classList.remove("aberto");
+}
+
+document.getElementById('formCadastro').addEventListener('submit', function(event) {
+    event.preventDefault();  // Impede o envio do formulário para demonstração
+    alert('Embalagem cadastrada com sucesso!');
+    document.getElementById('formCadastro').reset();  // Limpa o formulário
+    fecharFormulario();
 });
