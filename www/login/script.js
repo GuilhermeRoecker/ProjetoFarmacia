@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const errorMessage = document.getElementById("error-message");
+
     document.getElementById("loginForm").addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -15,15 +17,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
             body: formData.toString()
-        })        
-        .then(response => response.json())
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Usuário ou senha inválidos."); // Força erro se status não for 2xx
+            }
+            return response.json();
+        })
         .then(data => {
             localStorage.setItem("auth_token", data.token);
-            alert("Login bem-sucedido!");
-            window.location.href = "/www/inicio/";  // Corrigido
-        })        
+            window.location.href = "/www/inicio/";
+        })
         .catch(error => {
-            alert("Usuário ou senha inválidos.");
+            errorMessage.textContent = error.message;
+            errorMessage.style.display = "block";
         });
     });
 });

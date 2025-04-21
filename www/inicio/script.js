@@ -19,4 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setupAuth();
+
+
+    // Função para o botão de logout
+    const logoutBtn = document.getElementById("logout-btn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            sessionStorage.removeItem("auth_token");
+            localStorage.removeItem("auth_token");
+            window.location.href = "../login/index.html"; // Redireciona para login
+        });
+    }
 });
