@@ -240,23 +240,99 @@ td .action-btn {
     color: #007BFF;
   }
   
-  .modal {
-    display: none; /* Oculto inicialmente */
+  /* Estilo do modal */
+.modal {
+    display: none; /* Inicialmente oculto */
     position: fixed;
-    z-index: 999;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo com transparência */
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
     padding: 20px;
-    width: 400px;
     border-radius: 8px;
-  }
-  
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do modal */
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo do campo de pesquisa */
+#pesquisarFornecedor {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilo da lista de fornecedores */
+#listaFornecedores {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px; /* Limita a altura da lista */
+    overflow-y: auto; /* Permite rolagem se houver muitos fornecedores */
+}
+
+/* Estilo para cada item da lista */
+.fornecedor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover nos itens */
+.fornecedor-item:hover {
+    background-color: #f4f4f4;
+}
+
+/* Estilo para o botão de selecionar fornecedor */
+.fornecedor-item .select-fornecedor {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.fornecedor-item .select-fornecedor:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do botão de fechar */
+button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #d32f2f;
+}

@@ -33,7 +33,7 @@ public class ProdutoService {
         repository.delete(p);
     }
 
-    public Produto findByNome(String nome) {
+    public List<Produto> findByNome(String nome) {
         return repository.findByNome(nome);
     }
 
