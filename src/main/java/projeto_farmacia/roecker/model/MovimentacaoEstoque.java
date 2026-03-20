@@ -24,16 +24,16 @@ public class MovimentacaoEstoque {
     private Integer id;
 
     @Column(nullable = false)
-    private String tipo; // ENTRADA / SAIDA
+    private String tipo;
 
     @Column(nullable = false)
-    private String origem; // COMPRA, PRODUCAO, VENDA
+    private String origem;
 
     @Column(nullable = false)
     private Integer itemId;
 
     @Column(nullable = false)
-    private String itemTipo; // PRODUTO ou INSUMO
+    private String itemTipo;
 
     @Column(nullable = false, precision = 10, scale = 3)
     private BigDecimal quantidade;
