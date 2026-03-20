@@ -1,7 +1,6 @@
 package projeto_farmacia.roecker.model;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,9 +33,6 @@ public class Insumo {
 
     @Column
     private String fornecedor;
-
-    @Column
-    private Date validade;
 
     @Column 
     private BigDecimal valor_unitario;

@@ -24,10 +24,10 @@ public class Produto {
     @NotNull(message = "O campo nome é obrigatório")
     private String nome;
 
-    @Column
+    @Column(name = "preco_venda")
     private BigDecimal preco_venda;
 
     @Column
-    @NotNull(message = "O campo nome é obrigatório")
+    @NotNull(message = "O campo é obrigatório")
     private boolean ativo;
 }
