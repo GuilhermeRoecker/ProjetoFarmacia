@@ -32,4 +32,7 @@ public class Produto {
     @Column
     @NotNull(message = "O campo é obrigatório")
     private boolean ativo;
+
+    @Column(name = "custo_producao")
+    private BigDecimal custoProducao;
 }

@@ -1,5 +1,7 @@
 package projeto_farmacia.roecker.services;
 
+import java.math.BigDecimal;
+
 import projeto_farmacia.roecker.model.Produto;
 import projeto_farmacia.roecker.repository.ProdutoRepository;
 
@@ -41,5 +43,14 @@ public class ProdutoServices {
 
     public Produto getProdutoByAtivo(Boolean ativo) {
         return produtoRepository.findByAtivo(ativo);
+    }
+
+    public void atualizarCusto(Integer produtoId, BigDecimal custo) {
+        Produto produto = produtoRepository.findById(produtoId)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+
+        produto.setCustoProducao(custo);
+
+        produtoRepository.save(produto);
     }
 }

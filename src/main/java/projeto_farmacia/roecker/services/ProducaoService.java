@@ -52,8 +52,7 @@ public class ProducaoService {
 
             if (estoque.getQuantidade().compareTo(consumo) < 0) {
                 throw new IllegalStateException(
-                        "Estoque insuficiente para o insumo: " + item.getInsumo().getNome()
-                );
+                        "Estoque insuficiente para o insumo: " + item.getInsumo().getNome());
             }
         }
 
@@ -63,8 +62,18 @@ public class ProducaoService {
 
             estoqueInsumoService.removerEstoque(
                     item.getInsumo().getId(),
-                    consumo
-            );
+                    consumo);
+        }
+
+        BigDecimal custoTotal = BigDecimal.ZERO;
+
+        for (FormulaItem item : itens) {
+
+            BigDecimal consumo = item.getQuantidade().multiply(quantidadeProduzida);
+
+            BigDecimal custo = consumo.multiply(item.getInsumo().getValor_unitario());
+
+            custoTotal = custoTotal.add(custo);
         }
 
         estoqueProdutoService.adicionarEstoque(produtoId, quantidadeProduzida);
