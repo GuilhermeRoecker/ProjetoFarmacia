@@ -54,9 +54,3 @@ Sistema completo para gestão de farmácias de manipulação, oferecendo control
 
 ## 🖼️ Imagens do Sistema
 
-
----
-
-## 📌 Observações
-- Este repositório é **apenas uma apresentação pública** do sistema com imagens e descrição de funcionalidades.
-- O código-fonte está armazenado em um repositório privado.
